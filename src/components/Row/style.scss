@@ -1,0 +1,19 @@
+@import url("../../style.scss");
+
+.row-container {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  #slider-container {
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+    position: relative;
+
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+}

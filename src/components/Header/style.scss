@@ -1,0 +1,32 @@
+.header-container {
+    height: 95px;
+    padding: 12px 24px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+
+    img { 
+        height: 36px;
+    }
+
+    .header-menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-grow: 2;
+        gap: 12px;
+        
+        color: #ffffff;
+        font-weight: 300;
+    }
+
+    .auth-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 34px;
+    }
+}

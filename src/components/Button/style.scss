@@ -1,0 +1,33 @@
+@import url('../../style.scss');
+
+
+.button {
+    padding: 3px 16px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 400;
+
+    cursor: pointer;
+}
+
+.theme-red {
+    border: 2px solid var(--red);
+    border-radius: 3px;
+
+    color: var(--text);
+    background-color: var(--red);
+}
+
+.theme-white {
+    border: 2px solid var(--white);
+
+    color: var(--black);
+    background-color: var(--white);
+}
+
+.theme-transparent {
+    border: 2px solid var(--white);
+
+    color: var(--white);
+    background-color: var(--black);
+}
