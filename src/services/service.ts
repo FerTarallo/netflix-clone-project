@@ -13,21 +13,17 @@ export const getMoviesMap = async () => {
   let topRated: Movie[] = [];
   let horrorMovies: Movie[] = [];
 
-  await getPopularMovies().then((response) => {
-    popularMovies = response.data.results;
-  });
+  const popularMoviesResponse = await getPopularMovies();
+  popularMovies = popularMoviesResponse.data.results;
 
-  await getRecentlyAdded().then((response) => {
-    recentlyAdded = response.data.results;
-  });
+  const recentlyAddedResponse = await getRecentlyAdded();
+  recentlyAdded = recentlyAddedResponse.data.results;
 
-  await getTopRated().then((response) => {
-    topRated = response.data.results;
-  });
+  const topRatedResponse = await getTopRated();
+  topRated = topRatedResponse.data.results;
 
-  await getHorrorMovies().then((response) => {
-    horrorMovies = response.data.results;
-  });
+  const horrorMoviesResponse = await getHorrorMovies();
+  horrorMovies = horrorMoviesResponse.data.results;
 
   return {
     popularMovies: popularMovies,

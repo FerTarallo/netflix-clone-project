@@ -35,7 +35,6 @@ export function Poster({ content }: IPoster) {
   };
 
   useEffect(() => {
-    let savedShowsIds: Array<number> = [];
     onSnapshot(doc(database, "users", `${user?.email}`), (doc) => {
       doc.data()?.savedShows.map((savedShow: any) => {
         if (savedShow.id === content.id) {

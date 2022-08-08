@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { getPopularMovies, getMoviesMap } from "../../services/service";
+import { getMoviesMap, getPopularMovies } from "../../services/service";
 import { Movie } from "../../types/types";
 import { categoryDictionaryMap } from "../../utils/constants";
+import { truncateText } from "../../utils/functions";
 
 import { Row } from "../../components/Row";
 import { Button } from "../../components/Button";
@@ -14,22 +15,13 @@ export function Home() {
 
   const panelMovie = movies[Math.floor(Math.random() * movies.length)];
 
-  const truncateText = (text: string, number: number) => {
-    if (text.length > number) {
-      return text.slice(0, number) + "...";
-    } else {
-      return text;
-    }
-  };
-
-  const getMovies = () => {
+  const setMoviescategories = () => {
     getMoviesMap().then((response) => {
       setCategoriesMap(response);
     });
   };
 
   useEffect(() => {
-    getMovies();
     getPopularMovies()
       .then((response) => {
         setMovies(response.data.results);
@@ -37,6 +29,8 @@ export function Home() {
       .catch((error) => {
         console.log(error);
       });
+
+    setMoviescategories();
   }, []);
 
   return (
