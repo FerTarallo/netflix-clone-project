@@ -4,11 +4,15 @@
   width: 100%;
   height: 550px;
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+  @media (min-width: 1281px) {
+    height: 1100px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
   .overlay-image {
     width: 100%;
@@ -17,8 +21,12 @@
 
     background: linear-gradient(to right, #000000, rgba(0, 0, 0, 0.3));
 
+    @media (min-width: 1281px) {
+      height: 1100px;
+    }
+
     .content-panel {
-      padding: 72px 24px;
+      padding: 20% 24px;
       width: 100%;
 
       .buttons {

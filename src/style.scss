@@ -3,6 +3,8 @@
   --red: #d81f26;
   --white: #e5e5e5;
   --black: #141414;
+  --dark-gray: #333333;
+  --light-gray: #8c8c8c;
 
   --text: #e5e5e5;
 }
@@ -31,9 +33,26 @@ a {
   color: var(--text);
 }
 
+h1 {
+  color: var(--white);
+}
+
+.input-text {
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 4px;
+  padding: 0 20px 0;
+
+  font-size: 16px;
+  color: var(--light-gray);
+  background-color: var(--dark-gray);
+}
+
 @media (max-width: 600px) {
   body,
-  p, button {
+  p,
+  button {
     font-size: 12px;
   }
 
@@ -48,7 +67,8 @@ a {
 
 @media (min-width: 801px) and (max-width: 1025px) {
   body,
-  p, button {
+  p,
+  button {
     font-size: 16px;
   }
 
@@ -63,7 +83,8 @@ a {
 
 @media (min-width: 1281px) {
   body,
-  p, button {
+  p,
+  button {
     font-size: 16px;
   }
 

@@ -1,21 +1,19 @@
-import React from 'react'
+import React from "react";
 
-import './style.scss';
+import "./style.scss";
 
-type theme = 'red' | 'white' | 'transparent';
+type theme = "red" | "white" | "transparent";
 
 interface IButton {
-    text?: React.ReactNode;
-    theme: theme;
+  text?: React.ReactNode;
+  theme: theme;
+  onClick?: () => Promise<void>;
 }
 
-export function Button({ 
-    text,
-    theme,
-}: IButton) {
+export function Button({ text, theme, onClick }: IButton) {
   return (
-    <button className={`button theme-${theme}`}>
-        {text}
+    <button className={`button theme-${theme}`} onClick={onClick}>
+      {text}
     </button>
   );
 }

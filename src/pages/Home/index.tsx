@@ -1,11 +1,7 @@
 import { useEffect, useState } from "react";
-import {
-  getPopularMovies,
-  getRecentlyAdded,
-  getTopRated,
-  getHorrorMovies,
-} from "../../services/service";
+import { getPopularMovies, getMoviesMap } from "../../services/service";
 import { Movie } from "../../types/types";
+import { categoryDictionaryMap } from "../../utils/constants";
 
 import { Row } from "../../components/Row";
 import { Button } from "../../components/Button";
@@ -14,6 +10,7 @@ import "./style.scss";
 
 export function Home() {
   const [movies, setMovies] = useState<Movie[]>([]);
+  const [categoriesMap, setCategoriesMap] = useState<any>();
 
   const panelMovie = movies[Math.floor(Math.random() * movies.length)];
 
@@ -25,7 +22,14 @@ export function Home() {
     }
   };
 
+  const getMovies = () => {
+    getMoviesMap().then((response) => {
+      setCategoriesMap(response);
+    });
+  };
+
   useEffect(() => {
+    getMovies();
     getPopularMovies()
       .then((response) => {
         setMovies(response.data.results);
@@ -61,10 +65,17 @@ export function Home() {
           alt="Panel Image"
         />
       </div>
-      <Row idKey={1} title="Recently Added" fetchURL={getRecentlyAdded()} />
-      <Row idKey={2} title="Trending Now" fetchURL={getPopularMovies()} />
-      <Row idKey={3} title="Top 20" fetchURL={getTopRated()} />
-      <Row idKey={4} title="Horror Movies" fetchURL={getHorrorMovies()} />
+      {categoriesMap &&
+        Object.keys(categoriesMap).map((category, index) => {
+          return (
+            <Row
+              key={index}
+              idKey={index}
+              title={categoryDictionaryMap[category]}
+              movies={categoriesMap[category]}
+            />
+          );
+        })}
     </>
   );
 }

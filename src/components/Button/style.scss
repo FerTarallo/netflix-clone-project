@@ -1,33 +1,32 @@
-@import url('../../style.scss');
-
+@import url("../../style.scss");
 
 .button {
-    padding: 3px 16px;
-    text-decoration: none;
-    text-align: center;
-    font-weight: 400;
+  padding: 3px 16px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 400;
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .theme-red {
-    border: 2px solid var(--red);
-    border-radius: 3px;
+  border: 2px solid var(--red);
+  border-radius: 3px;
 
-    color: var(--text);
-    background-color: var(--red);
+  color: var(--text);
+  background-color: var(--red);
 }
 
 .theme-white {
-    border: 2px solid var(--white);
+  border: 2px solid var(--white);
 
-    color: var(--black);
-    background-color: var(--white);
+  color: var(--black);
+  background-color: var(--white);
 }
 
 .theme-transparent {
-    border: 2px solid var(--white);
+  border: 2px solid var(--white);
 
-    color: var(--white);
-    background-color: var(--black);
+  color: var(--white);
+  background-color: var(--black);
 }
